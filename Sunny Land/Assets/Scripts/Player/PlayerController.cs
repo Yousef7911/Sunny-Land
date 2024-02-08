@@ -7,10 +7,15 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
 
     Rigidbody2D rb;
+
+    private float Health;
+    [SerializeField] float StartingHealth;
     private void Start()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+
+        Health = StartingHealth;
     }
     // Update is called once per frame
     void Update()
@@ -30,6 +35,15 @@ public class PlayerController : MonoBehaviour
         }
         if (Horizontal == 0) {
             animator.SetBool("Move", false);
+        }
+        
+    }
+
+    public void TakeDamage(float Damage) {
+        Health -= Damage;
+        Debug.Log(Health);
+        if (Health <= 0) { 
+            this.gameObject.SetActive(false);
         }
     }
 }

@@ -43,5 +43,4 @@ public class Jump : MonoBehaviour
             animator.SetFloat("JumpFall", 0);
         }
     }
-
 }
