@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody2D rb;
 
-    private float Health;
+    public float Health;
     [SerializeField] float StartingHealth;
     private void Start()
     {
